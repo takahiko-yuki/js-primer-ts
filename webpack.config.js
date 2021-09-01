@@ -2,8 +2,9 @@ const path = require('path');
 
 module.exports = {
     // develop mode is sourcemap enable
-    mode: 'develop', // 'production' | 'none'
-    entry: '',
+    mode: 'development', // 'production' | 'development' | 'none'
+    // Entry point.
+    entry: './src/ts/index.ts',
     output: {
         path: path.join(__dirname, 'dist'),
         filename: 'index.js'
@@ -18,7 +19,7 @@ module.exports = {
     },
     // To resolve .ts files with an import statement
     resolve: {
-        module: [
+        modules: [
             'node_modules',
         ],
         extensions: [
