@@ -1,18 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div id="contents">
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>Todo App</title>
+    <link href="https://jsprimer.net/use-case/todoapp/final/final/index.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <div claass="todoapp">
+      <form id="js-form">
+        <input id="js-form-input" class="new-todo" type="text" placeholder="What need to be done?" autocomplete="off" />
+      </form>
     </div>
-    <div>
-        <span id="uuid"></span>
-        <button id="saiban" type="button">採番</button>
-    </div>    
-    <script src="./dist/index.js"></script>
-</body>
+    <!-- Todo list -->
+    <div id="js-todo-list" class="todo-list"></div>
+      <footer class="footer">
+        <!-- Todo item num-->
+        <span id="js-todo-count">Todoアイテム数: 0</span>
+      </footer>
+    </div>
+    <script type="module" src="./dist/index.js"></script>
+  </body>
 </html>

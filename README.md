@@ -11,3 +11,10 @@
 ```
 npm i --save-dev @types/uuid
 ```
+* [webpack入門](https://www.mitsue.co.jp/knowledge/blog/frontend/201912/05_0000.html)
+
+
+# memo
+* 型アサーション
+  * Typescriptコンパイラに対して、変数の型をちゃんとチェックしたので無視してOKと宣言.
+  * 型キャストは実際に型を変える
