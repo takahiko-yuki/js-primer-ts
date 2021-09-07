@@ -16,5 +16,7 @@ npm i --save-dev @types/uuid
 
 # memo
 * 型アサーション
-  * Typescriptコンパイラに対して、変数の型をちゃんとチェックしたので無視してOKと宣言.
+  * Typescriptコンパイラに、変数の型を無視してOKと宣言. 型を上書きする
   * 型キャストは実際に型を変える
+  * 本当は害. レガシーコードを移植できる
+  * https://typescript-jp.gitbook.io/deep-dive/type-system/type-assertion
