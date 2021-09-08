@@ -30,7 +30,7 @@ export function htmlToElement(html: string): Element {
  * @param {string[]} values 
  * @returns string
  */
-export function element(strings: string,  ...values: string[]): Element {
+export function element(strings: TemplateStringsArray,  ...values: string[]): Element {
 
     const htmlString = strings.reduce((result: string, str: string, i: number) => {
         const value = values[i - 1];
@@ -44,12 +44,12 @@ export function element(strings: string,  ...values: string[]): Element {
     return htmlToElement(htmlString);
 }
 
-/**
- * コンテナ要素の中身をbodyElementで上書きする
- * @param bodyElement 
- * @param containerElement 
- */
-export function render(bodyElement: Elenet, containerElement) {
-    containerElement.innerHTML = "";
-    containerElement.appendChild(bodyElement);
-}
+// /**
+//  * コンテナ要素の中身をbodyElementで上書きする
+//  * @param bodyElement 
+//  * @param containerElement 
+//  */
+// export function render(bodyElement: Elenet, containerElement) {
+//     containerElement.innerHTML = "";
+//     containerElement.appendChild(bodyElement);
+// }

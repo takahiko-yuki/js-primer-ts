@@ -12,7 +12,9 @@ export class App {
         const inputElement = <HTMLInputElement>document.querySelector("#js-form-input");
         const containerElement = document.querySelector("#js-todo-list");
         const todoItemCountElement = document.querySelector("js-todo-count");
-
+        // Todoアイテム数
+        let todoItemCount: number = 0;
+        todoItemCountElement?.textContent;
 
         formElement!.addEventListener("submit", (e) => {
             // submitイベントの本来の動作(URLにフォーム内容を送信)を止める. 
@@ -23,8 +25,13 @@ export class App {
             const todoItemElement = element`<li>${inputElement.value}</li>`;
 
             // Todoアイテムをcontainerに追加
+            containerElement?.appendChild(todoItemElement)
 
             // Todoアイテム数を+1し、表示されているテキストを更新する
+            todoItemCount += 1;
+            if (todoItemCountElement?.textContent) {
+                todoItemCountElement.textContent = `Todoアイテム数: ${todoItemCount}`;
+            } 
 
             // 入力欄を空文字にしてリセットする.
             inputElement.value = "";
