@@ -1,6 +1,7 @@
 export class EventEmitter {
 
-    _listeners: Map<string, Set<EventListener>>;
+    // 登録するイベント名とSet(リスナー関数] 
+    _listeners: Map<string, Set<any>>;
 
     constructor() {
         // Map object. 登録するイベント名とSet(リスナー関数] を管理する
@@ -39,7 +40,7 @@ export class EventEmitter {
 
         // すべてのリスナー関数を呼び出す
         listenerSet.forEach(listener => {
-            listener.call();
+            listener.call(this);
         });
     }
 

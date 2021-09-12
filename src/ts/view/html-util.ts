@@ -3,7 +3,7 @@
  * @param {string} str 
  * @returns {string}
  */
-export function escapeSpecialChars(str: string): string {
+function escapeSpecialChars(str: string): string {
     return str
         .replace(/&/g, "&amp;")
         .replace(/</g, "&lt;")
@@ -18,7 +18,7 @@ export function escapeSpecialChars(str: string): string {
  * @param {string} html 
  * @returns {string}
  */
-export function htmlToElement(html: string): Element {
+function htmlToElement(html: string): Element {
     const template = document.createElement("template");
     template.innerHTML = html;
     return <HTMLElement>template.content.firstElementChild;
@@ -44,12 +44,12 @@ export function element(strings: TemplateStringsArray,  ...values: string[]): El
     return htmlToElement(htmlString);
 }
 
-// /**
-//  * コンテナ要素の中身をbodyElementで上書きする
-//  * @param bodyElement 
-//  * @param containerElement 
-//  */
-// export function render(bodyElement: Elenet, containerElement) {
-//     containerElement.innerHTML = "";
-//     containerElement.appendChild(bodyElement);
-// }
+/**
+ * コンテナ要素の中身をbodyElementで上書きする
+ * @param {Element} bodyElement 
+ * @param {Element} containerElement 
+ */
+export function render(bodyElement: Element, containerElement: Element) :void {
+    containerElement.innerHTML = "";
+    containerElement.appendChild(bodyElement);
+}

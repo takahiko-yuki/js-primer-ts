@@ -1,8 +1,9 @@
 import { EventEmitter } from "../ts/EventEmitter";
+import { TodoItemModel } from "../model/TodoItemModel";
 
 export class TodoListModel extends EventEmitter {
 
-    items :[];
+    items :TodoItemModel[];
 
     /**
      * @param items 初期アイテム一覧（デフォルトは空の配列）
@@ -16,7 +17,7 @@ export class TodoListModel extends EventEmitter {
      * TodoItemの合計個数を返す
      * @returns {number}
      */
-    getTotalCount() : number {
+    getTotalCount(): number {
         return this.items.length;
     }
 
@@ -24,7 +25,7 @@ export class TodoListModel extends EventEmitter {
      * 表示できるTodoItemの配列を返す
      * @returns []
      */
-    getTodoItems() : [] {
+    getTodoItems(): TodoItemModel[] {
         return this.items;
     }
 
@@ -47,7 +48,7 @@ export class TodoListModel extends EventEmitter {
      * TodoItemを追加する
      * @param {TodoItemModel} todoItem 
      */
-    addTodo(todoItem: string) {
+    addTodo(todoItem: TodoItemModel) {
         this.items.push(todoItem);
         this.emitChange();
     }
